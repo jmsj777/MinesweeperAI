@@ -1,0 +1,60 @@
+import pyautogui
+pyautogui.PAUSE = 5
+pyautogui.FAILSAFE = True
+#pyautogui.FAILSAFE = False
+
+width, height = pyautogui.size()
+sizeSquarePx = 16
+
+for i in range(10):
+      pyautogui.moveTo(100, 100, duration=0.25)
+      pyautogui.moveTo(200, 100, duration=0.25)
+      pyautogui.moveTo(200, 200, duration=0.25)
+      pyautogui.moveTo(100, 200, duration=0.25)
+
+pyautogui.position()
+
+pyautogui.click(x,y)
+
+pyautogui.click(100, 150, button='left')
+
+pyautogui.rightClick()
+pyautogui.middleClick()
+
+im = pyautogui.screenshot()
+im.getpixel((0, 0))
+
+pyautogui.pixelMatchesColor(50, 200, (130, 135, 144))
+
+
+positionStr = 'X: ' + str(x).rjust(4) + ' Y: ' + str(y).rjust(4)
+        pixelColor = pyautogui.screenshot().getpixel((x, y))
+        positionStr += ' RGB: (' + str(pixelColor[0]).rjust(3)
+        positionStr += ', ' + str(pixelColor[1]).rjust(3)
+        positionStr += ', ' + str(pixelColor[2]).rjust(3) + ')'
+        print(positionStr, end='')
+
+pyautogui.locateOnScreen('oneBlock.png');
+returns (x, y, width, height of image)
+
+list(pyautogui.locateAllOnScreen('submit.png'))
+
+pyautogui.locateOnScreen('submit.png')
+(643, 745, 70, 29)
+>>> pyautogui.center((643, 745, 70, 29))
+(678, 759)
+>>> pyautogui.click((678, 759))
+
+pyautogui.click((
+    pyautogui.center((
+        pyautogui.locateOnScreen('oneBlock.png')
+    ))
+))
+
+surce:
+
+https://automatetheboringstuff.com/chapter18/
+
+Minesweeper online utilized
+http://minesweeperonline.com/#
+
